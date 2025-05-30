@@ -9,5 +9,7 @@
     "rootDir": ".",
     "outDir": "./dist",
 
-  }
+  },
+   "include": ["*.ts"]
+
 }
