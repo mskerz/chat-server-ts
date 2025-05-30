@@ -17,9 +17,11 @@
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.1.8",
     "@types/express": "^5.0.2",
     "@types/node": "^22.15.27",
     "nodemon": "^3.1.10",
+    "tailwindcss": "^4.1.8",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }

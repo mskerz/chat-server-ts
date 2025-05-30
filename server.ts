@@ -6,6 +6,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST || "localhost";
+
+app.use(express.static("public")); // Serve static files from the 'public' directory
 const httpServer = createServer(app);
 
 const io = new SocketIOServer(httpServer, {
@@ -49,10 +51,10 @@ io.on("connection", (socket) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Socket.IO server!");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
- 
+  
 httpServer.listen(PORT, () => {
   console.log(`Server listening on ${HOST}`);
 });
