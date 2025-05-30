@@ -7,6 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const HOST = process.env.HOST || "localhost";
 const httpServer = createServer(app);
+
 const io = new SocketIOServer(httpServer, {
   cors: {
     origin: "*", // Allow all origins for simplicity; adjust as needed
@@ -47,7 +48,11 @@ io.on("connection", (socket) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Socket.IO server!");
+});
+
  
 httpServer.listen(PORT, () => {
-  console.log(`Server listening on ${HOST}:${PORT}`);
+  console.log(`Server listening on ${HOST}`);
 });
